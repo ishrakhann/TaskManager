@@ -111,3 +111,56 @@ li.completed {
   padding: 0.4rem 0.6rem;
   font-size: 0.9rem;
 }
+/* ... [Existing imports] ... */
+
+/* General Styles */
+body {
+  font-family: 'Poppins', 'Segoe UI', Tahoma, sans-serif;
+  background: linear-gradient(135deg, #001f3f, #0077b6); 
+  margin: 0;
+  padding: 0;
+  color: #1a1a1a; 
+  line-height: 1.6;
+  /* Ensure body takes up full height for vertical centering on the dashboard */
+  min-height: 100vh; 
+  display: flex; /* Enable Flexbox for body */
+  flex-direction: column; /* Stack header and main vertically */
+}
+
+header {
+  /* ... [Existing header styles] ... */
+}
+
+/* Center login page (index.html) */
+.centered {
+  /* This ensures the login card is perfectly centered on index.html */
+  display: flex;
+  justify-content: center; /* Horizontal alignment */
+  align-items: center; /* Vertical alignment */
+  height: 100vh;
+  width: 100vw;
+}
+
+/* Dashboard Page Centering */
+main {
+    padding: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+    /* Center the main content block horizontally (done by margin: 0 auto) */
+    
+    /* Content Alignment within main (task input/list) */
+    display: flex;
+    gap: 30px;
+    
+    /* To justify the main content vertically to the middle of the remaining screen height: */
+    flex-grow: 1; /* Allows 'main' to fill the space below the header */
+    align-self: center; /* Centers the main block on the Y-axis if needed, but margin: 0 auto is usually enough. */
+    align-items: flex-start; /* Aligns items to the top (default dashboard look) */
+}
+@media (max-width: 768px) {
+    main {
+        flex-direction: column;
+        padding: 10px;
+        align-items: center; /* Centers columns on mobile */
+    }
+}
